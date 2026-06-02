@@ -87,7 +87,7 @@ function Index() {
     const onAnchorClick = (e: Event) => {
       const a = e.currentTarget as HTMLAnchorElement;
       const href = a.getAttribute("href");
-      if (!href) return;
+      if (!href || href === "#") return;
       const t = document.querySelector(href);
       if (t) {
         e.preventDefault();
@@ -97,17 +97,36 @@ function Index() {
     const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]');
     anchors.forEach((a) => a.addEventListener("click", onAnchorClick));
 
+    // A11y: make FAQ questions keyboard-accessible
+    const faqQs = document.querySelectorAll<HTMLElement>(".faq-q");
+    const onFaqKey = (e: KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        (e.currentTarget as HTMLElement).click();
+      }
+    };
+    faqQs.forEach((q, i) => {
+      q.setAttribute("role", "button");
+      q.setAttribute("tabindex", "0");
+      q.setAttribute("aria-expanded", "false");
+      q.id = q.id || `faq-q-${i}`;
+      q.addEventListener("keydown", onFaqKey);
+    });
+
     return () => {
       obs.disconnect();
       numObs.disconnect();
       anchors.forEach((a) => a.removeEventListener("click", onAnchorClick));
+      faqQs.forEach((q) => q.removeEventListener("keydown", onFaqKey));
     };
   }, []);
+
+  const html = useMemo(() => bodyHtml.replaceAll("__PRODUCT_IMG__", productImg), []);
 
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: cssText }} />
-      <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <main dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );
 }

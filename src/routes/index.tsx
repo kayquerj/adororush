@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import bodyHtml from "../pages-content/rush-body.html?raw";
 import cssText from "../pages-content/rush.css?raw";
+import productImg from "../assets/rush-product.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

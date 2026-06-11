@@ -135,6 +135,8 @@ function Index() {
       bodyHtml
         .replaceAll("__PRODUCT_IMG_2__", productImg2)
         .replaceAll("__PRODUCT_IMG_3__", productImg3)
+        .replaceAll("__CLIENT_IMG_1__", clientImg1)
+        .replaceAll("__CLIENT_IMG_2__", clientImg2)
         .replaceAll("__PRODUCT_IMG__", productImg),
     [],
   );

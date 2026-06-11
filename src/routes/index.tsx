@@ -5,9 +5,13 @@ import cssText from "../pages-content/rush.css?raw";
 import productAsset from "../assets/rush-product.png.asset.json";
 import product2Asset from "../assets/rush-2-bottles.png.asset.json";
 import product3Asset from "../assets/rush-3-bottles.png.asset.json";
+import client1Asset from "../assets/client-photo-1.jpg.asset.json";
+import client2Asset from "../assets/client-photo-2.jpg.asset.json";
 const productImg = productAsset.url;
 const productImg2 = product2Asset.url;
 const productImg3 = product3Asset.url;
+const clientImg1 = client1Asset.url;
+const clientImg2 = client2Asset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({

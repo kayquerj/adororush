@@ -126,7 +126,14 @@ function Index() {
     };
   }, []);
 
-  const html = useMemo(() => bodyHtml.replaceAll("__PRODUCT_IMG__", productImg), []);
+  const html = useMemo(
+    () =>
+      bodyHtml
+        .replaceAll("__PRODUCT_IMG_2__", productImg2)
+        .replaceAll("__PRODUCT_IMG_3__", productImg3)
+        .replaceAll("__PRODUCT_IMG__", productImg),
+    [],
+  );
 
   return (
     <>

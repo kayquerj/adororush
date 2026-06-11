@@ -386,6 +386,8 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible,video:focus-visible{ou
   .pc-img{max-height:160px}
 }
 @media(max-width:640px){
+  .hero-r,.hero-r-bg,.hero-product{display:none !important}
+  .hero{grid-template-columns:1fr}
   .ticker-item{font-size:10px;padding:0 22px}
   nav{height:54px}
   .nav-logo{font-size:20px}

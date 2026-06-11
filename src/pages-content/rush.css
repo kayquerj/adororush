@@ -426,3 +426,26 @@ a:focus-visible,button:focus-visible,.faq-q:focus-visible,video:focus-visible{ou
   .rev-title{font-size:16px}
   .rev-score-n{font-size:52px}
 }
+
+/* ─── PRICE: installment-first ─── */
+.pc-x{font-family:var(--ff);font-size:24px;font-weight:700;color:var(--p);line-height:1;padding-bottom:8px}
+.pc.hero .pc-x{color:var(--p)}
+.pc-per strong{color:var(--ink);font-weight:700}
+
+/* ─── REVIEW PHOTOS + GALLERY ─── */
+.rev-photos{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.rev-photo{width:88px;height:88px;border-radius:8px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;background:#fff}
+.rev-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.rev-gallery{margin:36px 0 8px;padding:0 4px}
+.rev-gallery-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.rev-gallery-title{font-family:var(--ff);font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.rev-gallery-sub{font-size:12px;color:var(--mute)}
+.rev-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.rev-gallery-grid a{display:block;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#faf5f2;transition:transform .2s}
+.rev-gallery-grid a:hover{transform:scale(1.03)}
+.rev-gallery-grid img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:640px){
+  .float-card{max-width:170px;padding:8px 10px}
+  .fc-text{font-size:10px}
+  .fc-sub{font-size:9px}
+}

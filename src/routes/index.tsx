@@ -3,7 +3,11 @@ import { useEffect, useMemo } from "react";
 import bodyHtml from "../pages-content/rush-body.html?raw";
 import cssText from "../pages-content/rush.css?raw";
 import productAsset from "../assets/rush-product.png.asset.json";
+import product2Asset from "../assets/rush-2-bottles.png.asset.json";
+import product3Asset from "../assets/rush-3-bottles.png.asset.json";
 const productImg = productAsset.url;
+const productImg2 = product2Asset.url;
+const productImg3 = product3Asset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,7 +126,14 @@ function Index() {
     };
   }, []);
 
-  const html = useMemo(() => bodyHtml.replaceAll("__PRODUCT_IMG__", productImg), []);
+  const html = useMemo(
+    () =>
+      bodyHtml
+        .replaceAll("__PRODUCT_IMG_2__", productImg2)
+        .replaceAll("__PRODUCT_IMG_3__", productImg3)
+        .replaceAll("__PRODUCT_IMG__", productImg),
+    [],
+  );
 
   return (
     <>

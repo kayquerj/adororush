@@ -15,6 +15,6 @@ export default defineConfig({
   // Build for Vercel using Nitro's "vercel" preset. Outputs to `.vercel/output`
   // which Vercel automatically picks up as a Build Output API v3 deployment.
   nitro: {
-    preset: "vercel",
+    preset: "netlify",
   },
 });
